@@ -1,0 +1,12 @@
+---
+
+- name: Configuring hosts and hostname
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner | default('root') }}"
+    group: "{{ item.group | default('root') }}"
+    mode: "{{ item.mode | default('0644') }}"
+  with_items:
+    - "{{ hostname_tpl }}"
+  when: ansible_virtualization_type != 'docker'

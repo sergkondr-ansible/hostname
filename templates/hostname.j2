@@ -1,0 +1,9 @@
+{% if fqdn_hostname is defined %}
+{{ fqdn_hostname }}
+{% else %}
+{% if inventory_hostname != inventory_hostname_short %}
+{{ inventory_hostname_short }}
+{% else %}
+{{ inventory_hostname }}
+{% endif %}
+{% endif %}

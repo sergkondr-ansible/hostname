@@ -1,0 +1,10 @@
+---
+
+hostname_hosts: []
+
+hostname_tpl:
+  - src: 'hosts.j2'
+    dest: '/etc/hosts'
+
+  - src: 'hostname.j2'
+    dest: '/etc/hostname'
